@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -156,11 +157,14 @@ export default function ProjectShowcase() {
                 style={{ width: "750px" }}
               />
             ) : (
-              <img
-                src={projects[hoveredIndex].mediaSrc}
-                alt={projects[hoveredIndex].title}
-                className="h-full w-full object-cover"
-              />
+              <div className="relative h-full w-full">
+                <Image
+                  src={projects[hoveredIndex].mediaSrc}
+                  alt={projects[hoveredIndex].title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
             )}
           </>
         )}
@@ -211,10 +215,11 @@ export default function ProjectShowcase() {
                   className="h-full w-full object-cover"
                 />
               ) : (
-                <img
+                <Image
                   src={project.mediaSrc}
                   alt={project.title}
-                  className="h-full w-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               )}
             </div>
@@ -231,10 +236,11 @@ export default function ProjectShowcase() {
                   className="h-full w-full object-cover"
                 />
               ) : (
-                <img
+                <Image
                   src={project.mediaSrc}
                   alt={project.title}
-                  className="h-full w-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               )}
             </div>
