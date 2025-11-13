@@ -55,7 +55,7 @@ export default function ProjectShowcase() {
     if (!containerRef.current) return;
 
     const ctx = gsap.context(() => {
-      itemsRef.current.forEach((item, index) => {
+      itemsRef.current.forEach((item) => {
         if (!item) return;
 
         // Fade in animation on scroll
